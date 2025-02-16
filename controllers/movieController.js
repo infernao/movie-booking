@@ -2,17 +2,38 @@
 const Movie = require("../models/Movie");
 
 exports.addMovie = async (req, res) => {
-  const movie = new Movie(req.body);
-  await movie.save();
-  res.status(201).json(movie);
+  try {
+    const movie = new Movie(req.body);
+    await movie.save();
+    res.status(201).json(movie);
+  } catch (error) {
+    res
+      .status(400)
+      .json({ message: "Failed to add movie", error: error.message });
+  }
 };
 
 exports.getMovies = async (req, res) => {
-  const movies = await Movie.find();
-  res.json(movies);
+  try {
+    const movies = await Movie.find();
+    res.json(movies);
+  } catch (error) {
+    res
+      .status(500)
+      .json({ message: "Failed to retrieve movies", error: error.message });
+  }
 };
 
 exports.getMovie = async (req, res) => {
-  const movie = await Movie.findById(req.params.id);
-  res.json(movie);
+  try {
+    const movie = await Movie.findById(req.params.id);
+    if (!movie) {
+      return res.status(404).json({ message: "Movie not found" });
+    }
+    res.json(movie);
+  } catch (error) {
+    res
+      .status(500)
+      .json({ message: "Failed to retrieve movie", error: error.message });
+  }
 };

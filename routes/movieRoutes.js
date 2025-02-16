@@ -5,10 +5,13 @@ const {
   getMovies,
   getMovie,
 } = require("../controllers/movieController");
-const { authMiddleware } = require("../middleware/authMiddleware");
+const {
+  authMiddleware,
+  adminMiddleware,
+} = require("../middleware/authMiddleware"); //Imported adminMiddleware
 const router = express.Router();
 
-router.post("/", authMiddleware, addMovie);
+router.post("/", authMiddleware, adminMiddleware, addMovie); //Admin only
 router.get("/", getMovies);
 router.get("/:id", getMovie);
 

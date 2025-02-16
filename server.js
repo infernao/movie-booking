@@ -19,6 +19,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.get("/api", (req, res) => {
   res.send("API is running....");
 });
+
 app.use("/api/auth", authRoutes);
 app.use("/api/movies", movieRoutes);
 app.use("/api/theaters", theaterRoutes);

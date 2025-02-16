@@ -14,7 +14,7 @@ const BookingSchema = new mongoose.Schema({
     required: true,
   },
   screenNumber: { type: Number, required: true },
-  seats: [{ type: String, required: true }],
+  seats: [{ type: String, required: true }], // Array of seat IDs or designations
   paymentStatus: {
     type: String,
     enum: ["successful", "failed"],

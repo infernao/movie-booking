@@ -6,7 +6,14 @@ const MovieSchema = new mongoose.Schema({
   genre: { type: String, required: true },
   duration: { type: Number, required: true },
   language: { type: String, required: true },
-  showtimes: [{ theaterId: mongoose.Schema.Types.ObjectId, time: Date }],
+  showtimes: [
+    {
+      theaterId: { type: mongoose.Schema.Types.ObjectId, ref: "Theater" },
+      screenNumber: { type: Number, required: true }, // Added screenNumber
+      time: { type: Date, required: true },
+      price: { type: Number, default: 10 }, //Added price
+    },
+  ],
 });
 
 module.exports = mongoose.model("Movie", MovieSchema);
