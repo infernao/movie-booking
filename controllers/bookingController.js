@@ -42,6 +42,7 @@ exports.bookSeats = async (req, res) => {
       screenNumber,
       showtime,
       seats,
+      date: date ? new Date(date) : new Date("2025-02-16"),
       paymentStatus: "successful",
     });
 

@@ -13,13 +13,14 @@ const BookingSchema = new mongoose.Schema({
     required: true,
   },
   screenNumber: { type: Number, required: true },
-  showtime: { type: String, required: true }, // Changed from Date to String
+  showtime: { type: String, required: true },
   seats: [{ type: String, required: true }],
   paymentStatus: {
     type: String,
     enum: ["successful", "failed"],
     default: "failed",
   },
+  date: { type: String, required: true, default: "2025-02-16" }, // Default for existing records
 });
 
 module.exports = mongoose.model("Booking", BookingSchema);
