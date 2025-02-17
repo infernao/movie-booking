@@ -15,7 +15,7 @@ const router = express.Router();
 
 router.post("/", authMiddleware, adminMiddleware, addTheater); //Admin only
 router.delete("/:id", authMiddleware, adminMiddleware, deleteTheater);
-router.post("/:id/screen", authMiddleware, adminMiddleware, addScreen);
+router.post("/:theaterId/screen", authMiddleware, adminMiddleware, addScreen);
 router.delete(
   "/:theaterId/screen/:screenId",
   authMiddleware,
