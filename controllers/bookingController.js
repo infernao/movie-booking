@@ -5,10 +5,28 @@ const Movie = require("../models/Movie"); // Import Movie model
 
 // Updated bookSeats function
 exports.bookSeats = async (req, res) => {
-  const { movieId, theaterId, screenNumber, showtime, date, seats } = req.body;
+  const {
+    movieId,
+    theaterId,
+    screenNumber,
+    showtime,
+    date,
+    seats,
+    paymentStatus,
+  } = req.body;
 
   try {
-    console.log("bookSeats function is called");
+    console.log(
+      "bookSeats function is called with paymentStatus:",
+      paymentStatus
+    );
+
+    if (paymentStatus === "failed") {
+      return res
+        .status(400)
+        .json({ message: "Payment failed, booking not completed" });
+    }
+
     const theater = await Theater.findById(theaterId);
     const movie = await Movie.findById(movieId);
     if (!theater || !movie) {
@@ -20,13 +38,10 @@ exports.bookSeats = async (req, res) => {
       return res.status(400).json({ message: "Invalid screen number" });
     }
 
-    // Determine the booking date range:
-    // If a date is provided, use it; otherwise, use the default date.
     const bookingDate = date ? new Date(date) : new Date("2025-02-16");
     const nextDate = new Date(bookingDate);
     nextDate.setDate(bookingDate.getDate() + 1);
 
-    // Check seat availability only for bookings on the same day (date range query)
     const existingBookings = await Booking.find({
       theaterId,
       screenNumber,
@@ -52,7 +67,6 @@ exports.bookSeats = async (req, res) => {
       date: bookingDate,
       paymentStatus: "successful",
     });
-    console.log("Received date from client:", date);
 
     await booking.save();
     res.status(201).json(booking);
