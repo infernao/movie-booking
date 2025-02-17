@@ -9,6 +9,7 @@ const TheaterSchema = new mongoose.Schema({
       screenNumber: { type: Number, required: true },
       totalSeats: { type: Number, required: true },
       seatLayout: { type: String, default: "Standard" }, // Added seat layout
+      showtimes: [{ type: String, required: true }], // Added showtimes
     },
   ],
 });

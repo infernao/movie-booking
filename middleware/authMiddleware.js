@@ -21,7 +21,7 @@ exports.authMiddleware = async (req, res, next) => {
     next();
   } catch (error) {
     console.error("JWT Verification Error:", error.message);
-    return res.status(401).json({ message: "Unauthorized - Invalid token" });
+    res.status(401).json({ message: "Unauthorized - Invalid token" });
   }
 };
 

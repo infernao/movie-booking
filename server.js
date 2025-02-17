@@ -16,8 +16,9 @@ connectDB();
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.get("/api", (req, res) => {
-  res.send("API is running....");
+app.use((req, res, next) => {
+  console.log("Request received!");
+  next();
 });
 
 app.use("/api/auth", authRoutes);

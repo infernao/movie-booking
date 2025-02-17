@@ -1,4 +1,3 @@
-// models/Booking.js
 const mongoose = require("mongoose");
 
 const BookingSchema = new mongoose.Schema({
@@ -14,13 +13,13 @@ const BookingSchema = new mongoose.Schema({
     required: true,
   },
   screenNumber: { type: Number, required: true },
-  seats: [{ type: String, required: true }], // Array of seat IDs or designations
+  showtime: { type: String, required: true }, // Changed from Date to String
+  seats: [{ type: String, required: true }],
   paymentStatus: {
     type: String,
     enum: ["successful", "failed"],
-    required: true,
+    default: "failed",
   },
-  bookingDate: { type: Date, default: Date.now },
 });
 
 module.exports = mongoose.model("Booking", BookingSchema);

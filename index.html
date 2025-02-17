@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Booking</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Movie Booking</h1>
+        <nav>
+            <button id="login-btn">Login</button>
+            <button id="register-btn">Register</button>
+            <button id="logout-btn" style="display: none;">Logout</button>
+            <span id="user-info" style="display: none;"></span>
+        </nav>
+    </header>
+
+    <main>
+        <div id="auth-forms" style="display: none;">
+            <div id="login-form">
+                <h2>Login</h2>
+                <input type="text" id="login-username" placeholder="Username">
+                <input type="password" id="login-password" placeholder="Password">
+                <button id="login-submit">Login</button>
+                <p id="login-message"></p>
+            </div>
+
+            <div id="register-form">
+                <h2>Register</h2>
+                <input type="text" id="register-username" placeholder="Username">
+                <input type="password" id="register-password" placeholder="Password">
+                <button id="register-submit">Register</button>
+                <p id="register-message"></p>
+            </div>
+        </div>
+
+        <div id="movie-list">
+            <h2>Movies</h2>
+            <ul id="movies"></ul>
+        </div>
+
+        <div id="theater-list">
+            <h2>Theaters</h2>
+            <ul id="theaters"></ul>
+        </div>
+
+        <div id="booking-form" style="display: none;">
+            <h2>Book Tickets</h2>
+            <select id="movie-select"></select>
+            <select id="theater-select"></select>
+            <input type="number" id="screen-number" placeholder="Screen Number">
+            <input type="text" id="seats" placeholder="Seats (comma-separated)">
+            <button id="book-seats-btn">Book Seats</button>
+            <p id="booking-message"></p>
+        </div>
+
+        <div id="my-bookings" style="display: none;">
+            <h2>My Bookings</h2>
+            <ul id="bookings-list"></ul>
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

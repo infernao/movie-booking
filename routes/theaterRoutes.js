@@ -1,6 +1,12 @@
 // routes/theaterRoutes.js
 const express = require("express");
-const { addTheater, getTheaters } = require("../controllers/theaterController");
+const {
+  addTheater,
+  getTheaters,
+  deleteTheater,
+  deleteScreen,
+  addScreen,
+} = require("../controllers/theaterController");
 const {
   authMiddleware,
   adminMiddleware,
@@ -8,6 +14,14 @@ const {
 const router = express.Router();
 
 router.post("/", authMiddleware, adminMiddleware, addTheater); //Admin only
+router.delete("/:id", authMiddleware, adminMiddleware, deleteTheater);
+router.post("/:id/screen", authMiddleware, adminMiddleware, addScreen);
+router.delete(
+  "/:theaterId/screen/:screenId",
+  authMiddleware,
+  adminMiddleware,
+  deleteScreen
+);
 router.get("/", getTheaters);
 
 module.exports = router;
