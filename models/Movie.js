@@ -8,12 +8,18 @@ const MovieSchema = new mongoose.Schema({
   language: { type: String, required: true },
   showtimes: [
     {
+      type: String,
+      enum: ["9:00 AM", "12:00 PM", "3:00 PM", "6:00 PM", "9:00 PM"],
+    },
+  ],
+  /*showtimes: [
+    {
       theaterId: { type: mongoose.Schema.Types.ObjectId, ref: "Theater" },
       screenNumber: { type: Number, required: true }, // Added screenNumber
       time: { type: Date, required: true },
       price: { type: Number, default: 10 }, //Added price
     },
-  ],
+  ],*/
 });
 
 module.exports = mongoose.model("Movie", MovieSchema);
