@@ -39,14 +39,22 @@ exports.deleteTheater = async (req, res) => {
 };
 
 exports.addScreen = async (req, res) => {
-  const { screenNumber, totalSeats, seatLayout, showtimes } = req.body;
+  const { screenNumber, totalSeats, seatLayout, showtimes, seatPrices } =
+    req.body;
+
   try {
     const theater = await Theater.findById(req.params.id);
     if (!theater) {
       return res.status(404).json({ message: "Theater not found" });
     }
 
-    const newScreen = { screenNumber, totalSeats, seatLayout, showtimes };
+    const newScreen = {
+      screenNumber,
+      totalSeats,
+      seatLayout,
+      showtimes,
+      seatPrices,
+    };
     theater.screens.push(newScreen);
     await theater.save();
     res.json(theater);

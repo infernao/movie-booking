@@ -3,13 +3,17 @@ const mongoose = require("mongoose");
 
 const TheaterSchema = new mongoose.Schema({
   name: { type: String, required: true },
-  location: { type: String }, // Added location
+  location: { type: String },
   screens: [
     {
       screenNumber: { type: Number, required: true },
       totalSeats: { type: Number, required: true },
-      seatLayout: { type: String, default: "Standard" }, // Added seat layout
-      showtimes: [{ type: String, required: true }], // Added showtimes
+      seatLayout: { type: String, default: "Standard" },
+      showtimes: [{ type: String, required: true }],
+      seatPrices: {
+        Standard: { type: Number, required: true },
+        Premium: { type: Number, required: true },
+      }, // Admin-defined seat prices
     },
   ],
 });
