@@ -12,8 +12,7 @@ A Movie Ticket Booking System that allows users to search for movies, select a t
 - [Running the Application](#running-the-application)
 - [Database Schema](#database-schema)
 - [Model Relationships](#model-relationships)
-- [Contributing](#contributing)
-- [License](#license)
+
 
 ---
 
