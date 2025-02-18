@@ -1,6 +1,6 @@
 # Infernao Movie Ticket Booking System
 
-A Movie Ticket Booking System that allows users to search for movies, select a theater, book seats, and make payments. The system supports multiple theaters, screens, and seat categories. This project is built using **Node.js, Express.js, MongoDB**, and **React** for the frontend.
+A Movie Ticket Booking System that allows users to search for movies, select a theater, book seats, and make payments. The system supports multiple theaters, screens, and seat categories. This project is built using **Node.js, Express.js, MongoDB**, and **React** for the frontend with basic ui and stylying
 
 ---
 
