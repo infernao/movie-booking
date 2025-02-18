@@ -12,6 +12,7 @@ A Movie Ticket Booking System that allows users to search for movies, select a t
 - [Running the Application](#running-the-application)
 - [Database Schema](#database-schema)
 - [Model Relationships](#model-relationships)
+- [Images of website pages](#pages)
 
 
 ---
@@ -128,4 +129,37 @@ The system uses **MongoDB** with the following key models:
 📌 **Screen is associated with one Movie and one Theater** (**Many-to-One**).  
 📌 **Booking references User, Movie, Theater, and Screen** (**Many-to-One for each**).  
    
-   
+## Login Page Preview 
+![LoginPage Screenshot](https://res.cloudinary.com/dspmthece/image/upload/v1739870667/Screenshot_2025-02-18_143210_xgjagd.png)   
+
+## Register Page Preview
+![RegisterPage Screenshot](https://res.cloudinary.com/dspmthece/image/upload/v1739870667/Screenshot_2025-02-18_143228_dhinta.png)   
+
+## Movie Page Preview
+![MoviePage Screenshot](https://res.cloudinary.com/dspmthece/image/upload/v1739870668/Screenshot_2025-02-18_143628_ksuvez.png)
+
+## Theatre Page Preview
+![TheatrePage Screenshot](https://res.cloudinary.com/dspmthece/image/upload/v1739870668/Screenshot_2025-02-18_143803_gg04kx.png)
+
+## Booking Page Preview
+![BookingPage Screenshot](https://res.cloudinary.com/dspmthece/image/upload/v1739870668/Screenshot_2025-02-18_143741_sotqha.png)
+
+## Manage Theatre Page for Admin Preview 
+![AdminPage Screenshot](https://res.cloudinary.com/dspmthece/image/upload/v1739870667/Screenshot_2025-02-18_144223_oowfie.png)
+
+## Manage Bookings Page for Admin Preview
+![ManageBookingsPage Screenshot](https://res.cloudinary.com/dspmthece/image/upload/v1739870669/Screenshot_2025-02-18_144154_szcbkx.png)
+
+## Add Theatre Page for Admin Preview
+![ManageBookingsPage Screenshot](https://res.cloudinary.com/dspmthece/image/upload/v1739870669/Screenshot_2025-02-18_144127_frdwzp.png)
+
+## Home Page Preview
+![HomePage Screenshot](https://res.cloudinary.com/dspmthece/image/upload/v1739870667/Screenshot_2025-02-18_143537_mtmr8a.png)
+
+## Movie Booking Page Preview
+![MovieBookingPagePreview](https://res.cloudinary.com/dspmthece/image/upload/v1739870667/Screenshot_2025-02-18_143653_lq9od7.png)
+
+## Admin Dashboard Preview 
+![AdminDashboard Screenshot](https://res.cloudinary.com/dspmthece/image/upload/v1739870668/Screenshot_2025-02-18_144035_r51hwo.png)
+
+
