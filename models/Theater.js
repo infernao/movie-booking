@@ -1,4 +1,3 @@
-// models/Theater.js
 const mongoose = require("mongoose");
 
 const TheaterSchema = new mongoose.Schema({
@@ -13,7 +12,7 @@ const TheaterSchema = new mongoose.Schema({
       seatPrices: {
         Standard: { type: Number, required: true },
         Premium: { type: Number, required: true },
-      }, // Admin-defined seat prices
+      },
     },
   ],
 });

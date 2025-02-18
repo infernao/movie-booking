@@ -1,8 +1,7 @@
-const API_BASE_URL = "http://localhost:5000/api"; // Adjust if your API is running elsewhere
+const API_BASE_URL = "http://localhost:5000/api";
 let authToken = null;
 let userRole = null;
 
-// --- Utility Functions ---
 async function fetchData(
   url,
   method = "GET",
@@ -33,7 +32,7 @@ async function fetchData(
     return await response.json();
   } catch (error) {
     console.error("Fetch Error:", error);
-    throw error; // Re-throw for component-level handling
+    throw error;
   }
 }
 
@@ -79,7 +78,6 @@ function updateUI(loggedIn) {
   }
 }
 
-// --- Authentication ---
 async function registerUser(username, password) {
   try {
     const data = await fetchData(`${API_BASE_URL}/auth/register`, "POST", {
@@ -127,7 +125,6 @@ function logoutUser() {
   updateUI(false);
 }
 
-// --- Movie and Theater Loading ---
 async function loadMovies() {
   try {
     const movies = await fetchData(`${API_BASE_URL}/movies`);
@@ -168,7 +165,6 @@ async function loadTheaters() {
   }
 }
 
-// --- Booking ---
 async function bookSeats(movieId, theaterId, screenNumber, seats) {
   try {
     const bookingData = {
@@ -212,9 +208,7 @@ async function loadUserBookings() {
   }
 }
 
-// --- Event Listeners ---
 document.addEventListener("DOMContentLoaded", () => {
-  // Authentication
   document.getElementById("register-btn").addEventListener("click", () => {
     document.getElementById("auth-forms").style.display = "block";
     document.getElementById("login-form").style.display = "none";
@@ -249,7 +243,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.getElementById("logout-btn").addEventListener("click", logoutUser);
 
-  // Booking
   document
     .getElementById("book-seats-btn")
     .addEventListener("click", async () => {
@@ -260,7 +253,6 @@ document.addEventListener("DOMContentLoaded", () => {
       await bookSeats(movieId, theaterId, screenNumber, seats);
     });
 
-  //Initial UI Setup
   const storedToken = localStorage.getItem("authToken");
   const storedUsername = localStorage.getItem("username");
   const storedRole = localStorage.getItem("userRole");

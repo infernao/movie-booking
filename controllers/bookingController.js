@@ -1,9 +1,7 @@
-// controllers/bookingController.js
 const Booking = require("../models/Booking");
-const Theater = require("../models/Theater"); // Import Theater model
-const Movie = require("../models/Movie"); // Import Movie model
+const Theater = require("../models/Theater");
+const Movie = require("../models/Movie");
 
-// Updated bookSeats function
 exports.bookSeats = async (req, res) => {
   const {
     movieId,
@@ -16,11 +14,6 @@ exports.bookSeats = async (req, res) => {
   } = req.body;
 
   try {
-    console.log(
-      "bookSeats function is called with paymentStatus:",
-      paymentStatus
-    );
-
     if (paymentStatus === "failed") {
       return res
         .status(400)
@@ -94,8 +87,8 @@ exports.cancelBooking = async (req, res) => {
     const booking = await Booking.findById(req.params.id);
     console.log("Booking found: ", booking);
     if (booking) {
-      // Add logic here to check if the show has started before allowing cancellation
-      await booking.deleteOne(); // Changed booking.remove() to booking.deleteOne()
+      // Add logic later here to check if the show has started before allowing cancellation
+      await booking.deleteOne();
       res.json({ message: "Booking cancelled" });
     } else {
       res.status(404).json({ message: "Booking not found" });

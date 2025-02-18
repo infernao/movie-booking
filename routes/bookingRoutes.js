@@ -9,20 +9,15 @@ const {
   getAllBookings,
 } = require("../controllers/bookingController");
 
-// Get booked seats for a specific theater, screen, and showtime
-// In bookingRoutes.js
-// bookingRoutes.js
 router.get("/:theaterId/:screenNumber/:showtime", async (req, res) => {
   const { theaterId, screenNumber, showtime } = req.params;
   const { date } = req.query; // Get date from query
   try {
     const filter = { theaterId, screenNumber, showtime };
     if (date) {
-      // Create a range for the selected day:
       const selectedDate = new Date(date);
       const nextDate = new Date(selectedDate);
       nextDate.setDate(selectedDate.getDate() + 1);
-      // Query for bookings where the date is within the selected day
       filter.date = { $gte: selectedDate, $lt: nextDate };
     }
     const bookings = await Booking.find(filter);

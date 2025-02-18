@@ -1,4 +1,3 @@
-// middleware/authMiddleware.js
 const jwt = require("jsonwebtoken");
 const User = require("../models/User");
 
@@ -13,7 +12,7 @@ exports.authMiddleware = async (req, res, next) => {
 
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    req.user = await User.findById(decoded.id).select("-password"); // Exclude password from req.user
+    req.user = await User.findById(decoded.id).select("-password");
 
     if (!req.user) {
       return res.status(401).json({ message: "Unauthorized - Invalid user" });
@@ -25,7 +24,6 @@ exports.authMiddleware = async (req, res, next) => {
   }
 };
 
-//Optional Admin Middleware (Example)
 exports.adminMiddleware = (req, res, next) => {
   if (req.user && req.user.role === "admin") {
     next();

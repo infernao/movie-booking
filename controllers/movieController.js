@@ -1,4 +1,3 @@
-// controllers/movieController.js
 const Movie = require("../models/Movie");
 
 exports.addMovie = async (req, res) => {

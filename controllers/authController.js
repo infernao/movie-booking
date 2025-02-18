@@ -1,11 +1,10 @@
-// controllers/authController.js
 const User = require("../models/User");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
 // Register a new user
 exports.register = async (req, res) => {
-  const { username, password, role } = req.body; // Added role
+  const { username, password, role } = req.body;
   const hashedPassword = await bcrypt.hash(password, 10);
   const user = new User({
     username,
@@ -19,11 +18,10 @@ exports.register = async (req, res) => {
   } catch (error) {
     res
       .status(400)
-      .json({ message: "Registration failed", error: error.message }); //Handle errors
+      .json({ message: "Registration failed", error: error.message });
   }
 };
 
-// User login
 exports.login = async (req, res) => {
   const { username, password } = req.body;
   const user = await User.findOne({ username });
@@ -36,5 +34,5 @@ exports.login = async (req, res) => {
     { id: user._id, role: user.role },
     process.env.JWT_SECRET
   );
-  res.json({ token, role: user.role }); // include role
+  res.json({ token, role: user.role });
 };

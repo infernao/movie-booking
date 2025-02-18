@@ -20,7 +20,7 @@ const BookingSchema = new mongoose.Schema({
     enum: ["successful", "failed"],
     default: "failed",
   },
-  date: { type: String, required: true, default: "2025-02-16" }, // Default for existing records
+  date: { type: String, required: true, default: "2025-02-16" },
 });
 
 module.exports = mongoose.model("Booking", BookingSchema);

@@ -1,4 +1,3 @@
-// routes/theaterRoutes.js
 const express = require("express");
 const {
   addTheater,
@@ -10,10 +9,10 @@ const {
 const {
   authMiddleware,
   adminMiddleware,
-} = require("../middleware/authMiddleware"); //Imported adminMiddleware
+} = require("../middleware/authMiddleware");
 const router = express.Router();
 
-router.post("/", authMiddleware, adminMiddleware, addTheater); //Admin only
+router.post("/", authMiddleware, adminMiddleware, addTheater);
 router.delete("/:id", authMiddleware, adminMiddleware, deleteTheater);
 router.post("/:theaterId/screen", authMiddleware, adminMiddleware, addScreen);
 router.delete(

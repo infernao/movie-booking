@@ -1,4 +1,3 @@
-// controllers/theaterController.js
 const Theater = require("../models/Theater");
 
 exports.addTheater = async (req, res) => {

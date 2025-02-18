@@ -1,4 +1,3 @@
-// routes/movieRoutes.js
 const express = require("express");
 const {
   addMovie,
@@ -9,10 +8,10 @@ const {
 const {
   authMiddleware,
   adminMiddleware,
-} = require("../middleware/authMiddleware"); //Imported adminMiddleware
+} = require("../middleware/authMiddleware");
 const router = express.Router();
 
-router.post("/", authMiddleware, adminMiddleware, addMovie); //Admin only
+router.post("/", authMiddleware, adminMiddleware, addMovie);
 router.get("/", getMovies);
 router.get("/:id", getMovie);
 router.delete("/:id", authMiddleware, adminMiddleware, deleteMovie);
