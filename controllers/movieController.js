@@ -1,5 +1,28 @@
 const Movie = require("../models/Movie");
 
+exports.getAvailableMovies = async (req, res) => {
+  try {
+    const count = await Movie.countDocuments({
+      showtimes: { $type: "string" },
+    });
+
+    const randomLimit = Math.floor(Math.random() * count) || 1;
+
+    // Fetch random movies where showtimes is a string type
+    const randomMovies = await Movie.aggregate([
+      { $match: { showtimes: { $type: "string" } } },
+      { $sample: { size: randomLimit } },
+    ]);
+
+    res.json(randomMovies);
+  } catch (error) {
+    res.status(500).json({
+      message: "Failed to retrieve random movies",
+      error: error.message,
+    });
+  }
+};
+
 exports.addMovie = async (req, res) => {
   try {
     const movie = new Movie(req.body);
