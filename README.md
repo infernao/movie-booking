@@ -162,4 +162,7 @@ The system uses **MongoDB** with the following key models:
 ## Admin Dashboard Preview 
 ![AdminDashboard Screenshot](https://res.cloudinary.com/dspmthece/image/upload/v1739870668/Screenshot_2025-02-18_144035_r51hwo.png)
 
+## Dummy Payment Page 
+![PaymentSimulation Screenshot](https://res.cloudinary.com/dspmthece/image/upload/v1739877096/Screenshot_2025-02-18_164018_e8cjcs.png)
+
 
