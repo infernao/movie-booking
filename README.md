@@ -28,11 +28,11 @@ Infernao Movie Ticket Booking System is a web application designed for booking m
 - Choose and book available seats.
 - Make payments (**dummy payments** for the scope of the project).
 - View **past and upcoming bookings**.
-- Cancel bookings before the show starts.
+- Cancel bookings upto one day before the show starts.
 
 **Admin users** (theater owners) have additional privileges, including:
 - Adding movies.
-- Managing theaters and screens.
+- Managing,Adding & deleting theaters and screens.
 - Setting ticket prices.
 
 ---
@@ -62,12 +62,12 @@ Infernao Movie Ticket Booking System is a web application designed for booking m
 ✅ **Search for Movies**: Users can search for movies based on title, location, or showtime.  
 ✅ **Select a Theater & Showtime**: Users can view available theaters and select showtimes for movies.  
 ✅ **Seat Selection & Booking**: Customers can choose seats from available ones and complete bookings.  
-✅ **Booking Confirmation & Cancellation**: Users get a **confirmation ticket** after booking and can cancel before the show starts (if applicable).  
+✅ **Booking Confirmation & Cancellation**: Users get a **confirmation ticket** after booking and can cancel upto one day before the show starts (if applicable).  
 ✅ **View Past & Upcoming Bookings**: Users can track their **booking history** with showtimes and seat numbers.  
 
 ### **Admin Features**
 ✅ **Manage Movies**: Admins can **add, update, and delete** movies.  
-✅ **Manage Theaters & Screens**: Admins can manage **theaters, screens, and assign showtimes**.  
+✅ **Manage Theaters & Screens**: Admins can manage,add and delete **theaters, screens, and assign showtimes**.  
 ✅ **Set Ticket Prices**: Admins can configure ticket pricing for different screen types (**standard, premium**).  
 ✅ **Manage Bookings**: Admins can view and manage user bookings.
 
@@ -102,6 +102,12 @@ npm install
 
 
 ## Running the Application
+
+### 1️⃣ Run the backend:
+npm run dev
+
+### 2️⃣ Run the frontend:
+npm run dev
 
 The frontend application will run on **[http://localhost:3000](http://localhost:3000)** by default.  
 The backend API will run on **[http://localhost:5000](http://localhost:5000)**.  
