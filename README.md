@@ -3,7 +3,7 @@
 A Movie Ticket Booking System that allows users to search for movies, select a theater, book seats, and make payments. The system supports multiple theaters, screens, and seat categories. This project is built using **Node.js, Express.js, MongoDB**, and **React** for the frontend with basic ui and stylying
 
 website is currently deployed on vercel -https://cinema-rho-hazel.vercel.app/
-
+When you will open the live link in your device for first time it will take 50 seconds for backend to get live.
 ---
 
 ## Table of Contents
