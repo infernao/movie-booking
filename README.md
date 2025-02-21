@@ -111,7 +111,7 @@ clone the frontend repository first: https://github.com/infernao/fe
 
 npm run dev
 
-The frontend application will run on **[http://localhost:3000](http://localhost:3000)** by default.  
+The frontend application will run on **[http://localhost:3000](http://localhost:5173)** by default.  
 The backend API will run on **[http://localhost:5000](http://localhost:5000)**.  
 
 ### 3️⃣ Login Credentials:
