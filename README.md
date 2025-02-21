@@ -107,10 +107,15 @@ npm install
 npm run dev
 
 ### 2️⃣ Run the frontend:
+clone the frontend repository first: https://github.com/infernao/fe
 npm run dev
 
 The frontend application will run on **[http://localhost:3000](http://localhost:3000)** by default.  
 The backend API will run on **[http://localhost:5000](http://localhost:5000)**.  
+
+### 3️⃣ Login Credentials:
+**CUSTOMER/USER**: Pushpak 1234
+**ADMIN**: ADMIN ADMIN
 
 You can interact with the system using the React frontend to make bookings, view movies, etc.  
 **Admin functionality** can be accessed through user authentication (**admin login**).
