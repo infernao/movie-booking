@@ -108,6 +108,7 @@ npm run dev
 
 ### 2️⃣ Run the frontend:
 clone the frontend repository first: https://github.com/infernao/fe
+
 npm run dev
 
 The frontend application will run on **[http://localhost:3000](http://localhost:3000)** by default.  
